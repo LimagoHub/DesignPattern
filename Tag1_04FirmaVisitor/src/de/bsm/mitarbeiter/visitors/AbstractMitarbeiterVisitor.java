@@ -13,8 +13,22 @@ public abstract class AbstractMitarbeiterVisitor implements MitarbeiterVisitor {
 
 	@Override
 	public void visit(LohnEmpfaenger lohnEmpfaenger) {
-		// Tok
+		// ok
 
 	}
+
+	@Override
+	public void init() {
+		// ok
+		
+	}
+
+	@Override
+	public void close() {
+		// ok
+		
+	}
+	
+	
 
 }

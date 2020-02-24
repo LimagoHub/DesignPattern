@@ -3,7 +3,7 @@ package de.bsm.mitarbeiter.visitors;
 import de.bsm.mitarbeiter.GehaltsEmpaenger;
 import de.bsm.mitarbeiter.LohnEmpfaenger;
 
-public class PrintVisitor implements MitarbeiterVisitor {
+public class PrintVisitor extends AbstractMitarbeiterVisitor {
 
 	@Override
 	public void visit(GehaltsEmpaenger gehaltsEmpaenger) {
