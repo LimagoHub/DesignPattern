@@ -30,4 +30,23 @@ public abstract class AbstractTrafficLightState implements TrafficLightState {
 
 	}
 
+
+
+	@Override
+	public void switchOn() {
+		throw new UnsupportedOperationException("Häh?");
+		
+	}
+
+
+
+	@Override
+	public void switchOff() {
+		throw new UnsupportedOperationException("Häh?");
+		
+	}
+	
+	
+	
+
 }

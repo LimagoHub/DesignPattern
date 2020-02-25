@@ -1,6 +1,6 @@
 package de.bsm.trafficlight;
 
-public class RedState extends AbstractTrafficLightState {
+public class RedState extends AbstractTrafficLightColorState {
 
 	public RedState(TrafficLight trafficLight) {
 		super(trafficLight);
