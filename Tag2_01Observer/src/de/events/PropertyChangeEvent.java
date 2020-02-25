@@ -8,7 +8,7 @@ public class PropertyChangeEvent {
 	private final Object newValue;
 	
 	
-	public PropertyChangeEvent(Object source, String propertyName, Object oldValue, Object newValue) {
+	public PropertyChangeEvent(final Object source, final String propertyName, final Object oldValue, final Object newValue) {
 		this.source = source;
 		this.propertyName = propertyName;
 		this.oldValue = oldValue;
