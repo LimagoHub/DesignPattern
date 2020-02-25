@@ -1,17 +1,12 @@
 package de.processors;
 
-public class LineCounter extends AbstractFileProcessor {
+public class LineCounter extends AbstractCounter {
 	
-	private int counter = 0;
-
 	@Override
 	public void process(char c) {
-		if(c == '\n')
-			counter ++;
-	}
+		if(c== '\n')
+			incrementCounter();
 
-	@Override
-	public void close() {
-		System.out.println(counter);
 	}
+	
 }
