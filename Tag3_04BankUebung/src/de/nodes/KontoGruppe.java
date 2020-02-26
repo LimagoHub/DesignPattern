@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import de.nodes.visitors.KontenVisitor;
+
 public class KontoGruppe extends AbstractKontoNode {
 	
 	private List<AbstractKontoNode> children = new ArrayList<>();
@@ -38,6 +40,11 @@ public class KontoGruppe extends AbstractKontoNode {
 		
 	}
 	
+	@Override
+	public void accept(KontenVisitor visitor) {
+		visitor.visit(this);
+	}
+
 	
 
 }

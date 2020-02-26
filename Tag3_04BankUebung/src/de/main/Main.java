@@ -1,8 +1,8 @@
 package de.main;
 
-import de.nodes.AbstractKontoNode;
 import de.nodes.Konto;
 import de.nodes.KontoGruppe;
+import de.nodes.visitors.PrintVisitor;
 
 public class Main {
 
@@ -22,7 +22,8 @@ public class Main {
 		Konto leaf = new Konto("e2_1");
 		e2.append(leaf);
 		
-		root.print();
+		//root.print();
+		root.iterate(new PrintVisitor());
 
 	}
 	

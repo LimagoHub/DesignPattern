@@ -5,7 +5,9 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class AbstractKontoNode {
+import de.nodes.visitors.KontenVisitor;
+
+public abstract class AbstractKontoNode {
 	
 	private String label;
 	private AbstractKontoNode parent = null;
@@ -60,6 +62,14 @@ public class AbstractKontoNode {
 		fillListRecursiv(liste);
 		return liste.iterator();
 	}
+	
+	public void iterate(KontenVisitor visitor) {
+		visitor.init();
+		iterator().forEachRemaining(n->n.accept(visitor));
+		visitor.close();
+	}
+	
+	public abstract void accept(KontenVisitor visitor);
 	
 	private void fillListRecursiv(List<AbstractKontoNode> list) {
 		list.add(this);

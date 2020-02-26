@@ -1,5 +1,7 @@
 package de.nodes;
 
+import de.nodes.visitors.KontenVisitor;
+
 public class Konto extends AbstractKontoNode {
 	
 	private double saldo = 0;
@@ -37,6 +39,11 @@ public class Konto extends AbstractKontoNode {
 		builder.append(getLabel());
 		builder.append("]");
 		return builder.toString();
+	}
+	
+	@Override
+	public void accept(KontenVisitor visitor) {
+		visitor.visit(this);
 	}
 
 	
