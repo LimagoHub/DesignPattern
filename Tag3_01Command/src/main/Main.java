@@ -32,10 +32,11 @@ public class Main {
 			
 			command.execute();
 			
-			if(! command.isQuery())
-				history.add(command);
+			history.add(command);
 			
 		}
+		
+		scanner.close();
 
 	}
 
