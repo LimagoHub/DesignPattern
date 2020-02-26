@@ -1,6 +1,8 @@
 package de.nodes;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class AbstractKontoNode {
@@ -50,9 +52,19 @@ public class AbstractKontoNode {
 	}
 
 	public void print() {
-		System.out.println(this);
+		iterator().forEachRemaining(System.out::println);
+	}
+	
+	public Iterator<AbstractKontoNode> iterator() {
+		final List<AbstractKontoNode> liste = new ArrayList<>();
+		fillListRecursiv(liste);
+		return liste.iterator();
+	}
+	
+	private void fillListRecursiv(List<AbstractKontoNode> list) {
+		list.add(this);
 		for (AbstractKontoNode child : getChildren()) {
-			child.print();
+			child.fillListRecursiv(list);
 		}
 	}
 	
